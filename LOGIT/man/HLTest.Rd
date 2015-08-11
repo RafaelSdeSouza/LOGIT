@@ -1,0 +1,64 @@
+\name{HLTest}
+\alias{HLTest}
+
+\title{
+Display Hosmer-Lemeshow statistic and table of probabilities following logistic 
+regression using glm with binomial family.
+}
+
+\description{
+Provides a Hosmer-Lemeshow statistic and table following logistic regression. 
+}
+
+\usage{
+HLTest(model name, # groups)
+See example for remainer of code
+}
+
+\arguments{
+  \item{x}{
+The function has two arguments: model name, number of groups}
+}
+
+\details{
+HLTest is a post-estimation function for logistic regression, following the use 
+of glm(). Usage displays a table of observed vs predicted groups and an overall 
+H-L goodness-of-fit statistic. 
+
+}
+
+
+\references{
+Hilbe, J. M. (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC. 
+Bilder, C.R. and Loughlin, T.M. (2015), Analysis of Categorical Data with R, 
+  Chapman & Hall/CRC
+Hilbe, J. M. (2009), Logistic Regression Models, Chapman & Hall/CRC. 
+Hosmer, D.W., Lemeshow, S, and Sturdivant, R.X (2013), Applied Logistic Regression,
+  3rd ed, Wiley.
+
+}
+\author{
+Adapted from Loughlin, T.M. in Bilder and Loughlin, 2015)
+}
+
+\note{
+HLTest must be loaded into memory in order to be effectve. As a function in LOGIT, 
+it is immediately available to a user. My thanks to Bilger and Loughlin for the 
+use of their function. 
+}
+
+\seealso{
+\code{\link{glm}}
+}
+\examples{
+library(MASS)
+library(LOGIT)
+data(medpar)
+mylogit <- glm( died ~  los + white + hmo, family=binomial, data=medpar)
+grp10 <- HLTest(obj=mylogit, g=10)
+cbind(grp10$observed, round(grp10$expect, digits = 1))
+grp10
+
+}
+
+\keyword{ models }

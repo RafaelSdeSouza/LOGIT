@@ -1,0 +1,17 @@
+{
+    "contents" : "Package: LOGIT\nType: Package\nTitle: What the Package Does (Title Case)\nVersion: 0.1\nDate: 2015-08-11\nAuthor: Who wrote it\nMaintainer: Who to complain to <yourfault@somewhere.net>\nDescription: More about what it does (maybe more than one line)\nLicense: What license is it under?\nLazyData: TRUE",
+    "created" : 1439273859538.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3026843535",
+    "id" : "8EEC1305",
+    "lastKnownWriteTime" : 1439273442,
+    "path" : "~/Dropbox/artigos/Meusartigos/IAA-WGC/Github/LOGIT/LOGIT/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "dcf"
+}

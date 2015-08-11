@@ -1,0 +1,18 @@
+{
+    "contents" : "library(MASS)\nlibrary(LOGIT)\ndata(medpar)\nmylogit <- glm(died ~ los + white + hmo, family=binomial, data=medpar)\nsummary(mylogit)\ntoOR(mylogit)\n",
+    "created" : 1439274666484.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "3421916098",
+    "id" : "A646E0E0",
+    "lastKnownWriteTime" : 7813028919362219375,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
