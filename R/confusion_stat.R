@@ -1,5 +1,5 @@
-# Hilbe, J.M., Practical Guide to Logistic Regression
-# Rafael de Souza, Eötvös Loránd Univ. 2015
+# Hilbe, J.M., Practical Guide to Logistic Regression 2015
+# Rafael de Souza, Eotvos Lorand Univ.
 require(caret)
 confusion_stat<-function(pred=pred,obs=obs)
 {
@@ -7,5 +7,5 @@ confusion_stat<-function(pred=pred,obs=obs)
   table=ftable(addmargins(CM))
   stat<-confusionMatrix(pred,obs)
   Sensitivity<-stat
-  return(list(matrix=table,statistics=c(stat$overall[1],stat$byClass[1],stat$byClass[2] ))) 
-}  
+  return(list(matrix=table,statistics=c(stat$overall[1],stat$byClass[1],stat$byClass[2] )))
+}

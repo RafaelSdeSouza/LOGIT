@@ -1,15 +1,15 @@
 # Hilbe, J.M., Practical Guide to Logistic Regression
-# Rafael de Souza, Eötvös Loránd Univ. 2015
+# Rafael de Souza, Eotvos Lorand Univ. 2015
 ########### Function
-library(pROC)
-library(caret)
-library(ggplot2)
-library(ggthemes)
-library(reshape)
+
 
 ROCtest <- function(model= x, fold=10, type="ROC") {
- 
-# Extract information from dataset  
+  require(pROC)
+  require(caret)
+  require(ggplot2)
+  require(ggthemes)
+  require(reshape)
+# Extract information from dataset
   data<-model$data
   response=as.character(model$formula[[2]])
   folds <- createFolds(data[,response], k=fold)
@@ -22,14 +22,14 @@ ROCtest <- function(model= x, fold=10, type="ROC") {
     training <-medpar[-folds[[i]], ]
     testing <- medpar[folds[[i]], ]
     myroc <-glm(model$formula, family=binomial, data= training)
-    
-    
+
+
     ROC.a<- data.frame(True=training$died,predicted=predict(myroc, newdata=training,type = "response"))
-    
+
     F1 <-roc(ROC.a$True,ROC.a$predicted)
-    
+
     ROC.b<- data.frame(True=testing$died,predicted=predict(myroc, newdata=testing,type = "response"))
-    
+
     ROC.b$class<-ROC.b$predicted
     ROC.b$class[which(ROC.b$class>=coords(F1,x="best")[1])]<-1
     ROC.b$class[which(ROC.b$class<coords(F1,x="best")[1])]<-0
@@ -37,11 +37,11 @@ ROCtest <- function(model= x, fold=10, type="ROC") {
     ROC_all<-rbind(ROC_all,ROC.b)
 
 
-    
-    AUC<-append(AUC,F2$auc) 
+
+    AUC<-append(AUC,F2$auc)
 #    cut<-append(cut,coords(F1,x="best")[1])
   }
-  
+
 
 
 
@@ -53,13 +53,13 @@ xs<-coords(GROC,x="best")[[2]]
 ys<-coords(GROC,x="best")[[3]]
 
 # Plot ROC curve and Confusion Matrix
-  
+
 
 
 if(type=="ROC") {
   g1<-data.frame(Sensitivity=GROC$sensitivities,Specificity=1-GROC$specificities)
-  
- 
+
+
  gg<- ggplot(data=g1,aes(x=Specificity,y=Sensitivity))+geom_line(size=1.5,alpha=0.7,color="blue4")+
     theme_stata( base_size = 11, base_family = "sans")+
     theme(plot.title = element_text(hjust=0.5),axis.title.y=element_text(vjust=0.75),axis.title.x=element_text(vjust=-0.25),
@@ -73,11 +73,11 @@ return(list(plot=gg,Observed=factor(ROC_all$True),Predicted=factor(ROC_all$class
 }
 
 if(type=="Sensitivity") {
-  
+
   g2<-data.frame(Sensitivity=GROC$sensitivities,Specificity=GROC$specificities,
                  probcut=GROC$thresholds)
   g2<-melt(g2, id=c("probcut"))
-  
+
  gg<- ggplot(data=g2,aes(x=probcut,y=value,group=variable,colour=variable))+geom_line(name="",size=1.5,alpha=0.7)+
    scale_colour_stata(name="")+geom_point(size=2)+
     theme_stata( base_size = 11, base_family = "sans")+
@@ -90,12 +90,12 @@ if(type=="Sensitivity") {
 #   geom_segment(x=cut,y=0,xend=cut,yend=1,colour="red",size=1)
 
 return(list(plot=gg,Observed=factor(ROC_all$True),Predicted=factor(ROC_all$class),cut=cut))
-  
-} 
+
+}
 gg
 }
-  
-  
+
+
 
 
 

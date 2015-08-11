@@ -1,10 +1,22 @@
 Package: LOGIT
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Functions, data and code for binary and binomial data
 Version: 0.1
 Date: 2015-08-11
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Joseph M Hilbe <hilbe@asu.edu>, Rafael S. de Souza
+    <rafael.2706@gmail.com>
+Maintainer: Rafael S. de Souza <rafael.2706@gmail.com>
+Description: Functions, data and code for Hilbe, J.M. 2015. Practical Guide to
+    Logistic Regression, by Chapman and Hall/CRC
+Depends:
+    R (>= 3.0)
+License: GPL (>= 3)
+Imports:
+    caret,
+    pROC,
+    ggplot2,
+    ggthemes,
+    reshape
 LazyData: TRUE
+NeedsCompilation: no
+Repository: CRAN
