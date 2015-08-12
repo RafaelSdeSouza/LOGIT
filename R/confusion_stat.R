@@ -17,7 +17,7 @@
 #' @aliases confusion_stat
 #' @usage confusion_stat(<predicted statistic>, <observed response>)
 #'
-#' @format \arguments{
+#' @format \describe{
 #' \item{x}{
 #' The function has two arguments: predicted values, response values}
 #' }

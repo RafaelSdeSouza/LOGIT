@@ -3,9 +3,9 @@
 \docType{data}
 \title{R84}
 \description{
-German health reform data for the year 1984. Subset of a multiyear 
-registry evaluating differences in physician provider utilization  
-prior to and after health reform legislation in the late 1980s.  
+German health reform data for the year 1984. Subset of a multiyear
+registry evaluating differences in physician provider utilization
+prior to and after health reform legislation in the late 1980s.
 R84 is identical to rwn1984.
 }
 \usage{data(R84)}
@@ -25,15 +25,15 @@ R84 is identical to rwn1984.
    \item{\code{self}}{self-employed=1; not self employed=0}
    \item{\code{edlevel1}}{(1/0) not high school graduate}
    \item{\code{edlevel2}}{(1/0) high school graduate}
-   \item{\code{edlevel3}}{(1/0) university/college} 
+   \item{\code{edlevel3}}{(1/0) university/college}
    \item{\code{edlevel4}}{(1/0) graduate school}
   }
 }
 \details{
-R84 is saved as a data frame. The data is typically used to model 
-docvis, which is a count variable. It also may be used to model "outwork", 
-a variable indicating if a patient is out-of-work. "outwork" is a binary 
-variable which can be used as the response of a logistic or other binary 
+R84 is saved as a data frame. The data is typically used to model
+docvis, which is a count variable. It also may be used to model "outwork",
+a variable indicating if a patient is out-of-work. "outwork" is a binary
+variable which can be used as the response of a logistic or other binary
 response model. R84 is identical to rwm1984.
 }
 \source{
@@ -54,10 +54,10 @@ data(R84)
 # center both docvis and age
 R84$cage <- R84$age - mean(R84$age)
 R84$cdoc <- R84$docvis - mean(R84$docvis)
-glmrp <- glm(outwork ~ cdoc + female + kids + cage + factor(edlevel), 
+glmrp <- glm(outwork ~ cdoc + female + kids + cage + factor(edlevel),
              family=binomial, data=R84)
 summary(glmrp)
 exp(coef(glmrp))
-toOR(glmp)
+toOR(glmrp)
 }
 \keyword{datasets}

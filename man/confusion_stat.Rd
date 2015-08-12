@@ -2,7 +2,7 @@
 \name{confusion_stat}
 \alias{confusion_stat}
 \title{Display confusion or classification matrix following logistic regression using glm with binomial family.}
-\format{\arguments{
+\format{\describe{
 \item{x}{
 The function has two arguments: predicted values, response values}
 }}
