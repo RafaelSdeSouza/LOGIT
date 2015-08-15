@@ -30,21 +30,25 @@ Hilbe, Practical Guide to Logistic Regression, Chapman & Hall/CRC
 Hilbe, Joseph M (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC
 }
 \examples{
-load("C://GUIDE_LOGISTIC-REGRESSION/LOGIT-CRAN/Data/hiv.Rdata")
-hiv
+#load("C://GUIDE_LOGISTIC-REGRESSION/LOGIT-CRAN/Data/hiv.Rdata")
+#data(hiv)
+#table(hiv); hiv
+#noinfec <- hiv$cases -  hiv$infec
+#summary(myhiv<- glm(cbind(infec, noinfec) ~  factor(cd4)  + factor#(cd8), family=binomial, data=hiv))
+#summary(mymodq <- glm( cbind(infec, noinfec) ~  factor(cd4)  + #factor#(cd8), family=quasibinomial, data=hiv))
+#library(sandwich)
+#sqrt(diag(vcovHC(myhiv, type="HC0")))
+#source("c://rfiles/toOR.r")
+#toOR(myhiv)
+
+library(LOGIT)
+data(hiv)
 table(hiv); hiv
 noinfec <- hiv$cases -  hiv$infec
 summary(myhiv<- glm(cbind(infec, noinfec) ~  factor(cd4)  + factor(cd8), family=binomial, data=hiv))
 summary(mymodq <- glm( cbind(infec, noinfec) ~  factor(cd4)  + factor(cd8), family=quasibinomial, data=hiv))
 library(sandwich)
 sqrt(diag(vcovHC(myhiv, type="HC0")))
-source("c://rfiles/toOR.r")
-toOR(myhiv)
-
-library(LOGIT)
-data(hiv)
-noinfec <- hiv$cases -  hiv$infec
-summary(myhiv<- glm(cbind(infec, noinfec) ~  factor(cd4)  + factor(cd8), family=binomial, data=hiv))
 toOR(myhiv)
 }
 \keyword{datasets}
