@@ -38,8 +38,11 @@ it is immediately available to a user.
 \examples{
 library(MASS)
  library(LOGIT)
- data(medpar)
- mylogit <- glm( died ~  los + white + hmo, family=binomial, data=medpar)
+ data(R84)
+ R84$cage <- R84$age - mean(R84$age)
+ R84$cdoc <- R84$docvis - mean(R84$docvis)
+ mylogit <- glm(outwork ~ cdoc + female + kids + cage + factor(edlevel),
+ family=binomial, data=R84)
  summary(mylogit)
  ROCtest(mylogit, fold=10, type="Sensitivity")
  ROCtest(mylogit, fold=10, type="ROC")

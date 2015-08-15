@@ -16,7 +16,9 @@ Imports:
     pROC,
     ggplot2,
     ggthemes,
-    reshape
+    reshape,
+    COUNT,
+    e1071
 LazyData: TRUE
 NeedsCompilation: no
 Repository: CRAN

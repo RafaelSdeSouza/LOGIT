@@ -28,10 +28,16 @@ it is immediately available to a user.
 \examples{
 library(MASS)
  library(LOGIT)
- data(medpar)
- mylogit <- glm( died ~  los + white + hmo, family=binomial, data=medpar)
- mu <- predict(mylogit, type="response")
- confusion_stat(mu, medpar$died)
+  data(R84)
+  R84$cage <- R84$age - mean(R84$age)
+  R84$cdoc <- R84$docvis - mean(R84$docvis)
+  mylogit <- glm(outwork ~ cdoc + female + kids + cage + factor(edlevel),
+  family=binomial, data=R84)
+  mu <- predict(mylogit, type="response")
+  cutpoint<-ROCtest(mylogit, fold=10, type="Sensitivity")$cut
+  mu[mu>=cutpoint]<-1
+  mu[mu<cutpoint]<-0
+  confusion_stat(mu, R84$outwork)
 }
 \author{
 Rafael de Souza, ELTE  University,  and Joseph M. Hilbe, Arizona State University

@@ -31,8 +31,11 @@
 #'@examples
 #'   library(MASS)
 #'  library(LOGIT)
-#'  data(medpar)
-#'  mylogit <- glm( died ~  los + white + hmo, family=binomial, data=medpar)
+#'  data(R84)
+#'  R84$cage <- R84$age - mean(R84$age)
+#'  R84$cdoc <- R84$docvis - mean(R84$docvis)
+#'  mylogit <- glm(outwork ~ cdoc + female + kids + cage + factor(edlevel),
+#'  family=binomial, data=R84)
 #'  summary(mylogit)
 #'  ROCtest(mylogit, fold=10, type="Sensitivity")
 #'  ROCtest(mylogit, fold=10, type="ROC")
@@ -56,17 +59,17 @@ ROCtest <- function(model= model, fold=10, type="ROC") {
   cut<-c()
 
 # Run k-fold and ROC analysis
-  for(i in 1:fold){
-    training <-medpar[-folds[[i]], ]
-    testing <- medpar[folds[[i]], ]
-    myroc <-glm(model$formula, family=binomial, data= training)
+   for(i in 1:fold){
+    training <-data[-folds[[i]], ]
+    testing <- data[folds[[i]], ]
+    myroc <- glm(model$formula, family = binomial, data= training)
 
 
-    ROC.a<- data.frame(True=training$died,predicted=predict(myroc, newdata=training,type = "response"))
+    ROC.a<- data.frame(True = training[,response],predicted=predict(myroc, newdata=training,type = "response"))
 
     F1 <-roc(ROC.a$True,ROC.a$predicted)
 
-    ROC.b<- data.frame(True=testing$died,predicted=predict(myroc, newdata=testing,type = "response"))
+    ROC.b<- data.frame(True=testing[,response],predicted=predict(myroc, newdata=testing,type = "response"))
 
     ROC.b$class<-ROC.b$predicted
     ROC.b$class[which(ROC.b$class>=coords(F1,x="best")[1])]<-1
@@ -87,8 +90,8 @@ ROCtest <- function(model= model, fold=10, type="ROC") {
 GROC<-roc(ROC_all$True,ROC_all$predicted)
 
 cut<-coords(GROC,x="best",best.method=c("closest.topleft"))[[1]]
-xs<-coords(GROC,x="best")[[2]]
-ys<-coords(GROC,x="best")[[3]]
+#xs<-coords(GROC,x="best")[[2]]
+#ys<-coords(GROC,x="best")[[3]]
 
 # Plot ROC curve and Confusion Matrix
 

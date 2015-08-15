@@ -3,9 +3,9 @@
 \docType{data}
 \title{azheart}
 \description{
-Random subset of 34 patients from the 1991 Arizona Medicare data for patients  
-hospitalized subsequent to undergoing a CABG (DRGs 106, 107) or PTCA (DRG 112) 
-cardiovascular procedure. 
+Random subset of 34 patients from the 1991 Arizona Medicare data for patients
+hospitalized subsequent to undergoing a CABG (DRGs 106, 107) or PTCA (DRG 112)
+cardiovascular procedure.
 }
 \usage{data(azheart)}
 \format{
@@ -27,9 +27,10 @@ Hilbe, Practical Guide to Logistic Regression, Chapman & Hall/CRC
 }
 \references{
 Hilbe, Joseph M (2015), Practical Guide to Logistic Regression, Chapman & Hall/CRC
-} 
+}
 \examples{
 library(LOGIT)
+library(COUNT)
 data(azheart); attach(azheart)
 table(los); table(procedure, type); table(los, died)
 summary(los)
