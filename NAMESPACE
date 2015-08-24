@@ -3,6 +3,7 @@
 export(HLTest)
 export(ROCtest)
 export(confusion_stat)
+export(iQuantile)
 export(toOR)
 import(caret)
 import(e1071)

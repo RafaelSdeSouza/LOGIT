@@ -1,14 +1,57 @@
-iQuantile <- function (x, breaks=15) {
-  #indices in x[] of percentile steps by 1/breaks
-  xo <- order(x)  #sort indices
-  n <- length(x)
-  r <- rep(0, breaks+1)
-  r[1]<- 1
-  r[breaks+1]<- n
-  r[2:breaks]<- round(1:(breaks-1)*n/breaks)
-  return(list(index=r,cuts=x[xo[r]]))
-}
-  hlGOF.test <- function (observed, predicted, breaks=15) {
+# Hilbe, J.M., Practical Guide to Logistic Regression 2015
+# Rafael de Souza, Eotvos Lorand Univ.
+#This program is free software: you can redistribute it and/or modify
+#it under the terms of the GNU General Public License version 3 as published by
+#the Free Software Foundation.
+
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+
+#  A copy of the GNU General Public License is available at
+#  http://www.r-project.org/Licenses/
+#
+#' @title  Display Hosmer-Lemeshow statistic and table of probabilities following logistic
+#' regression using glm with binomial family.
+#' @description Provides a Hosmer-Lemeshow statistic and table following logistic regression.
+#' @aliases hlGOF.test
+#' @usage hlGOF.test(response, predicted statistic, # breaks or groups)
+#'
+#' @format \describe{
+#' \item{x}{
+#' The function has three arguments: observed term, predicted values, # groups}
+#' }
+#' @details hlGOF.test is a post-estimation function for logistic regression, following the use
+#' of glm(). Usage displays a table of observed vs predicted groups and an overall
+#' H-L goodness-of-fit statistic. The test is originally from Hilbe (2009).
+#' @param observed
+#' @param predicted
+#' @param breaks
+#' @return numeric
+#' @note hlGOF.test must be loaded into memory in order to be effectve. As a function in LOGIT,
+#' it is immediately available to a user. My thanks to Prof. Robert LaBudde for the initial
+#' version of this function.
+#'@examples
+#'library(MASS)
+#'library(LOGIT)
+#'data(medpar)
+#'mylogit <- glm( died ~  los + white + hmo, family=binomial, data=medpar)
+#'summary(mylogit)
+#'medpar2 <- na.omit(medpar)
+#'hlGOF.test(medpar$died, predict(mylogit,medpar2, type="response"), breaks=12)
+#'
+#' @seealso \code{\link{glm}}
+#' @author Joseph M. Hilbe, Arizona State University, Robert LaBudde,
+#' Institute for Statisical Education (Statistics.com), provided initial code
+#' for this function for Hilbe, Logistic Regression Models, text.
+#'
+#' @references Hilbe, J. M. (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
+#' Hilbe, J. M. (2009), Logistic Regression Models, Chapman & Hall/CRC.
+#' @keywords models
+#' @export
+#'
+hlGOF.test <- function (observed, predicted, breaks=15) {
   #H-L GOF test for logistic regression
   #observed and predicted should not have missing values and match by index
   cat('\n', 'Hosmer-Lemeshow GOF test', '\n')
@@ -20,7 +63,7 @@ iQuantile <- function (x, breaks=15) {
     iq <- iQuantile(predicted, nCuts) #indices for cuts
     iqInd<- iq$index
     cat('\n','For # Cuts =',nCuts,'  # Data =',ndata,'\n')
-    cat('Cut  # Total #Patterns # Resp.    # Pred.  Mean Resp. Mean Pred.','\n')  
+    cat('Cut  # Total #Patterns # Resp.    # Pred.  Mean Resp. Mean Pred.','\n')
 
     x2 <- 0
     ntot <- 0
@@ -38,12 +81,12 @@ iQuantile <- function (x, breaks=15) {
       apred <- mean(predicted[isubs])
       mpred <- apred*nsubs
       x2 <- x2 + (mobs-mpred)^2/mpred + ((nsubs-mobs) - (nsubs-mpred))^2/(nsubs-mpred)
-      cat(sprintf('%3d',i), sprintf('%8d', nsubs), sprintf('%8d', ncvp), sprintf('%8d', mobs), 
+      cat(sprintf('%3d',i), sprintf('%8d', nsubs), sprintf('%8d', ncvp), sprintf('%8d', mobs),
         sprintf('%10.2f',mpred), sprintf('%8.5f', aobs), sprintf('%8.5f',apred), '\n')
     }
     cat('Total # Data:',ndata,' Total over cuts:',ntot,'\n')
     pvals[nCuts] <- pchisq(x2,nCuts-2,lower.tail=FALSE)
-    cat('Chisq:', x2, '  d.f.:', sprintf('%d',nCuts-2), ' P-value:', 
+    cat('Chisq:', x2, '  d.f.:', sprintf('%d',nCuts-2), ' P-value:',
       sprintf('%8.5f', pvals[nCuts]),'\n')
   }
   cat('\n','Minimum P-value: ',sprintf('%8.5f',min(pvals)),'\n')
