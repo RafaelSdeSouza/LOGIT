@@ -3,8 +3,8 @@
 \docType{data}
 \title{titanicgrp}
 \description{
-The data is an grouped version of the 1912 Titanic passenger survival 
-log, 
+The data is an grouped version of the 1912 Titanic passenger survival
+log,
 }
 \usage{data(titanicgrp)}
 \format{
@@ -19,7 +19,7 @@ log,
 }
 \details{
 titanicgrp is saved as a data frame.
-Used to assess risk ratios   
+Used to assess risk ratios
 }
 \source{
 Found in many other texts
@@ -39,13 +39,13 @@ data(titanicgrp)
 tg <- titanicgrp
 head(tg)
 tg$died <- tg$cases - tg$survive
-summary(mylr <- glm( cbind(survive, died) ~ age + sex + factor(class), 
+summary(mylr <- glm( cbind(survive, died) ~ age + sex + factor(class),
                 family=binomial, data=tg))
-to(mylr)
+toOR(mylr)
 P__disp(mylr)
 
 # SCALED LOGISTIC REGRESSION
-summary(myqr <- glm( cbind(survive, died) ~ age + sex + factor(class), 
+summary(myqr <- glm( cbind(survive, died) ~ age + sex + factor(class),
                 family=quasibinomial, data=tg))
 toOR(myqr)
 
@@ -58,7 +58,7 @@ summary(glmpr)
 exp(coef(glmpr))
 
 lcases <- log(titanicgrp$cases)
-nb2o <- nbinomial(survive ~ age + sex + factor(class), 
+nb2o <- nbinomial(survive ~ age + sex + factor(class),
                                         formula2 =~ age + sex,
                                         offset = lcases,
                                         mean.link="log",

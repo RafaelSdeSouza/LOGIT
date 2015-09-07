@@ -10,7 +10,7 @@ output than comes with the default JAGS output
 }
 
 \usage{
-source("jhilbe.r")
+source("jhbayes.r")
 }
 
 \arguments{
@@ -51,9 +51,9 @@ library(R2jags)
 library(LOGIT)
 data(medpar)
 %JAGS code with J0 as MCMC algorithm
-  out <- J0$BUGS$output
-  myB <- MuBUGS$Output(out, c(uNames("beta", K), "LogL", "AIC", "BIC"))
-  round(myB, 4)
+%  out <- J0$BUGS$output
+%  myB <- MuBUGS$Output(out, c(uNames("beta", K), "LogL", "AIC", "BIC"))
+%  round(myB, 4)
 }
 
 \keyword{ models }
