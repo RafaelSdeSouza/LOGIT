@@ -39,7 +39,7 @@
 #'mylogit <- glm( died ~  los + white + hmo, family=binomial, data=medpar)
 #'summary(mylogit)
 #'medpar2 <- na.omit(medpar)
-#'hlGOF.test(medpar$died, predict(mylogit,medpar2, type="response"), breaks=12)
+#'hlGOF.test(medpar2$died, predict(mylogit,medpar2, type="response"), breaks=12)
 #'
 #' @seealso \code{\link{glm}}
 #' @author Joseph M. Hilbe, Arizona State University, Robert LaBudde,
