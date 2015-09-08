@@ -18,7 +18,8 @@ Imports:
     ggthemes,
     reshape,
     COUNT,
-    e1071
+    e1071,
+    MASS
 LazyData: TRUE
 NeedsCompilation: no
 Repository: CRAN

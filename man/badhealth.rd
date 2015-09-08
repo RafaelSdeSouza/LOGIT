@@ -35,14 +35,14 @@ age.std <- scale(badhealth$age)
 summary(myhealth<- glm(badh ~  numvisit + age.std, family=binomial, data=badhealth))
 toOR(myhealth)
 
-# if LOGIT package not available
-#load("c://GUIDE-LOGISTIC-REGRESSION/Data/badhealth.rdata")
-#bh <- badhealth
-#head(bh)
-#age.std <- scale(bh$age)
-#summary(issick<- glm(badh ~  numvisit + age.std, family=binomial, #data=bh))
-#source("c://GUIDE-LOGISTIC-REGRESSION/Functions/toOR.r")
-#toOR(issick)
+% if LOGIT package not available
+%load("c://GUIDE-LOGISTIC-REGRESSION/Data/badhealth.rdata")
+%bh <- badhealth
+%head(bh)
+%age.std <- scale(bh$age)
+%summary(issick<- glm(badh ~  numvisit + age.std, family=binomial, #data=bh))
+%source("c://GUIDE-LOGISTIC-REGRESSION/Functions/toOR.r")
+%toOR(issick)
 }
 \keyword{datasets}
 

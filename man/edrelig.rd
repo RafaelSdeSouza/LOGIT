@@ -4,7 +4,7 @@
 \title{edrelig}
 \description{
 A study of 601 subjects aimed at determing predictors for religiousity.
-Subjects self-identify as being religious or not. Predictrors include gender,
+Subjects self-identify as being religious or not. Predictors include gender,
 age, having children, and education level.
 }
 \usage{data(edrelig)}
