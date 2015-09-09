@@ -9,14 +9,14 @@ regression using glm with binomial family.}
 The function has three arguments: observed term, predicted values, # groups}
 }}
 \usage{
-hlGOF.test(response, predicted statistic, # breaks or groups)
+hlGOF.test(observed, predicted statistic, # breaks or groups)
 }
 \arguments{
-\item{observed}{}
+\item{observed}{response variable}
 
-\item{predicted}{}
+\item{predicted}{predicted statistic}
 
-\item{breaks}{}
+\item{breaks}{breaks or groups}
 }
 \value{
 numeric

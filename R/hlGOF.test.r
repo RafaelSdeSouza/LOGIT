@@ -16,7 +16,7 @@
 #' regression using glm with binomial family.
 #' @description Provides a Hosmer-Lemeshow statistic and table following logistic regression.
 #' @aliases hlGOF.test
-#' @usage hlGOF.test(response, predicted statistic, # breaks or groups)
+#' @usage hlGOF.test(observed, predicted statistic, # breaks or groups)
 #'
 #' @format \describe{
 #' \item{x}{
@@ -25,9 +25,9 @@
 #' @details hlGOF.test is a post-estimation function for logistic regression, following the use
 #' of glm(). Usage displays a table of observed vs predicted groups and an overall
 #' H-L goodness-of-fit statistic. The test is originally from Hilbe (2009).
-#' @param observed
-#' @param predicted
-#' @param breaks
+#' @param observed response variable
+#' @param predicted predicted statistic
+#' @param breaks breaks or groups
 #' @return numeric
 #' @note hlGOF.test must be loaded into memory in order to be effectve. As a function in LOGIT,
 #' it is immediately available to a user. My thanks to Prof. Robert LaBudde for the initial

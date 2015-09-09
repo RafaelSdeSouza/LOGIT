@@ -18,6 +18,7 @@ group (DRG 112). Patient data have been randomly selected from the original data
     \item{\code{hmo}}{Patient belongs to a Health Maintenance Organization, binary}
     \item{\code{white}}{Patient identifies themselves as Caucasian, binary}
     \item{\code{died}}{Patient died, binary}
+     \item{\code{age}}{Patient age range, categorical}
     \item{\code{age80}}{Patient age 80 and over, binary}
     \item{\code{type}}{Type of admission, categorical}
     \item{\code{type1}}{Elective admission, binary}

@@ -3,7 +3,7 @@
 \docType{data}
 \title{mylgg}
 \description{
-The data has 11 grouped observations and 6 variables. Grouped 
+The data has 11 grouped observations and 6 variables. Grouped
 subset of medpar data.
 }
 \usage{data(mylgg)}
@@ -15,15 +15,15 @@ subset of medpar data.
     \item{\code{type}}{Type of admission: 1=elective;2=urgent; 3=emergency}
     \item{\code{alive}}{# patients alive per patient profile}
     \item{\code{dead}}{# patients died within 48 hrs admit per patient profile}
-    \item{\code{m}}{# patients in each patient profile (same predictor values)}
+    \item{\code{los}}{# patients in each patient profile (same predictor values)}
    }
 }
 \details{
 mylgg is saved as a data frame.
-Used to assess odds ratios and predict survival folllowing surgery   
+Used to assess odds ratios and predict survival folllowing surgery
 }
 \source{
-Subset of medpar data, grouped format. 
+Subset of medpar data, grouped format.
 }
 \references{
 Hilbe, Joseph M (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC
@@ -36,7 +36,7 @@ library(MASS)   # if not automatically loaded
 library(LOGIT)
 data(mylgg)
 mylgg
-summary(lg <- glm( cbind(alive, dead) ~ white + hmo + factor(type), 
+summary(lg <- glm( cbind(alive, dead) ~ white + hmo + factor(type),
                 family=binomial, data=mylgg))
 toOR(lg)
 P__disp(lg)
