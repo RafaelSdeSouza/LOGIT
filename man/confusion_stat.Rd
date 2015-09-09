@@ -11,9 +11,9 @@ The function has two arguments: predicted values, response values}
 confusion_stat(<predicted statistic>, <observed response>)
 }
 \arguments{
-\item{pred}{}
+\item{pred}{Predicted values}
 
-\item{obs}{}
+\item{obs}{Observed values}
 }
 \value{
 confusion matrix

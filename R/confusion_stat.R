@@ -21,8 +21,8 @@
 #' \item{x}{
 #' The function has two arguments: predicted values, response values}
 #' }
-#' @param pred
-#' @param obs
+#' @param pred Predicted values
+#' @param obs  Observed values
 #' @return confusion matrix
 #' @import caret e1071
 #' @note confusion_stat() must be loaded into memory in order to be effectve. As a function in LOGIT,
