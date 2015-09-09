@@ -15,7 +15,11 @@ P__disp(x)
 \item{x}{glm object}
 }
 \value{
-list
+\describe{
+\item{Pearson Chi2}{Pearson Chi2 statistic}
+\item{Dispersion}{Pearson dispersion: Chi2/dof}
+%% ...
+}
 }
 \description{
 Following the glm() function with a grouped binomial or poisson family, or glm.nb(),
@@ -26,11 +30,6 @@ under 1.0 indicate possible underdispersion.
 \details{
 P_disp is a post-estimation function, following the use of glm() or glm.nb().
 Appropriate with grouped binomial or Poisson glm families.
-\describe{
-\item{Pearson Chi2}{Pearson Chi2 statistic}
-\item{Dispersion}{Pearson dispersion: Chi2/dof}
-%% ...
-}
 }
 \note{
 P__disp must be loaded into memory in order to be effectve. As a function in LOGIT,

@@ -17,11 +17,11 @@
 #' The only argument is the name of the fitted glm or glm.nb function model}
 #' }
 #' @param x  glm object
-#' @return list
 #' @note P__disp must be loaded into memory in order to be effectve. As a function in LOGIT,
 #' it is immediately available to a user.
 #' @details P_disp is a post-estimation function, following the use of glm() or glm.nb().
 #' Appropriate with grouped binomial or Poisson glm families.
+#' @return
 #' \describe{
 #' \item{Pearson Chi2}{Pearson Chi2 statistic}
 #' \item{Dispersion}{Pearson dispersion: Chi2/dof}
