@@ -1,5 +1,5 @@
-\name{P_disp}
-\alias{P_disp}
+\name{P__disp}
+\alias{P__disp}
 
 \title{
  Display Pearson Chi2 and associated dispersion statistic following following use of glm
@@ -7,13 +7,13 @@
 
 \description{
 Following the glm() function with a grouped binomial or poisson family, or glm.nb(),
-P_disp() displays the Pearson Chi2 statistic and related dispersion statistic.
+P__disp() displays the Pearson Chi2 statistic and related dispersion statistic.
 Values of the dispersion greater than 1.0 indicate possible overdispersion; values
 under 1.0 indicate possible underdispersion.
 }
 
 \usage{
-P_disp(x)
+P__disp(x)
 }
 
 \arguments{
@@ -22,7 +22,7 @@ The only argument is the name of the fitted glm or glm.nb function model}
 }
 
 \details{
-P_disp is a post-estimation function, following the use of glm() or glm.nb().
+P__disp is a post-estimation function, following the use of glm() or glm.nb().
 Appropriate with grouped binomial or Poisson glm families.
 }
 
@@ -44,7 +44,7 @@ Joseph M. Hilbe, Arizona State University, and
     hilbe@asu.edu
 }
 \note{
-P_disp must be loaded into memory in order to be effectve. As a function in LOGIT,
+P__disp must be loaded into memory in order to be effectve. As a function in LOGIT,
 it is immediately available to a user.
 }
 
@@ -60,7 +60,7 @@ died <- titanicgrp$cases - titanicgrp$survive
 grptit <- glm( cbind(survive, died) ~ age+sex+class03, family=binomial,
    data=titanicgrp)
 summary(grptit)
-P_disp(grptit)
+P__disp(grptit)
 }
 
 \keyword{ models }

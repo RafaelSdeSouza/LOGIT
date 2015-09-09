@@ -5,12 +5,12 @@
 #' @title   Display Pearson Chi2 and associated dispersion statistic
 #' following following use of glm.
 #' @description Following the glm() function with a grouped binomial or poisson family, or glm.nb(),
-#' P_disp() displays the Pearson Chi2 statistic and related dispersion statistic.
+#' P__disp() displays the Pearson Chi2 statistic and related dispersion statistic.
 #' Values of the dispersion greater than 1.0 indicate possible overdispersion; values
 #' under 1.0 indicate possible underdispersion.
-#' @aliases P_disp
+#' @aliases P__disp
 #' @import MASS
-#' @usage P_disp(x)
+#' @usage P__disp(x)
 #'
 #' @format   \describe{
 #' \item{x}{
@@ -18,10 +18,15 @@
 #' }
 #' @param x  glm object
 #' @return list
-#' @note P_disp must be loaded into memory in order to be effectve. As a function in LOGIT,
+#' @note P__disp must be loaded into memory in order to be effectve. As a function in LOGIT,
 #' it is immediately available to a user.
 #' @details P_disp is a post-estimation function, following the use of glm() or glm.nb().
 #' Appropriate with grouped binomial or Poisson glm families.
+#' \describe{
+#' \item{Pearson Chi2}{Pearson Chi2 statistic}
+#' \item{Dispersion}{Pearson dispersion: Chi2/dof}
+#' %% ...
+#' }
 #' @seealso \code{\link{glm}}
 #' @author Joseph M. Hilbe, Arizona State University, and
 #' Jet Propulsion Laboratory, California Institute of technology
@@ -37,12 +42,12 @@
 #'grptit <- glm( cbind(survive, died) ~ age+sex+class03, family=binomial,
 #'data=titanicgrp)
 #'summary(grptit)
-#'P_disp(grptit)
+#'P__disp(grptit)
 #'
 #' @keywords models
 #' @export
 #'
-P_disp <- function(x) {
+P__disp <- function(x) {
    pr <- sum(residuals(x, type = "pearson")^2)
    dispersion <- pr/x$df.residual
    cat("\n Pearson Chi2 = ", pr ,
