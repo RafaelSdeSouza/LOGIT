@@ -1,13 +1,12 @@
 Package: LOGIT
 Type: Package
-Title: Functions, data and code for binary and binomial data
-Version: 0.1
+Title: Functions, Data and Code for Binary and Binomial Data
+Version: 0.2
 Date: 2015-08-11
 Author: Joseph M Hilbe <hilbe@asu.edu>, Rafael S. de Souza
     <rafael.2706@gmail.com>
 Maintainer: Rafael S. de Souza <rafael.2706@gmail.com>
-Description: Functions, data and code for Hilbe, J.M. 2015. Practical Guide to
-    Logistic Regression, by Chapman and Hall/CRC
+Description: Functions, Data and Code for Hilbe, J.M. 2015. Practical Guide to Logistic Regression, by Chapman and Hall, CRC
 Depends:
     R (>= 3.0)
 License: GPL (>= 3)

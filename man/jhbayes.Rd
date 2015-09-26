@@ -10,7 +10,7 @@ output than comes with the default JAGS output
 }
 
 \usage{
-MyBUGSOutput(xx,vars)
+source("jhbayes.r")
 }
 
 \arguments{
@@ -19,7 +19,7 @@ Variable arguments based on model}
 }
 
 \details{
-load jhbayes.r prior to running JAGS model. MyBUGSOutput and uNames functions
+Load jhbayes.r prior to running JAGS model. MyBUGSOutput and uNames functions
 will then be in memory. From Alain Zuur support files on highstat.com.
 }
 
@@ -52,7 +52,7 @@ library(LOGIT)
 data(medpar)
 %JAGS code with J0 as MCMC algorithm
 %  out <- J0$BUGS$output
-%  myB <- MuBUGS$Output(out, c(uNames("beta", K), "LogL", "AIC", "BIC"))
+%  myB <- MyBUGSOutput(out, c(uNames("beta", K), "LogL", "AIC", "BIC"))
 %  round(myB, 4)
 }
 
