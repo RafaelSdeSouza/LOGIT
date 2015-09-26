@@ -15,7 +15,7 @@ subset of medpar data.
     \item{\code{type}}{Type of admission: 1=elective;2=urgent; 3=emergency}
     \item{\code{alive}}{# patients alive per patient profile}
     \item{\code{dead}}{# patients died within 48 hrs admit per patient profile}
-    \item{\code{los}}{# patients in each patient profile (same predictor values)}
+    \item{\code{m}}{# patients in each patient profile (same predictor values)}
    }
 }
 \details{
@@ -36,7 +36,7 @@ library(MASS)   # if not automatically loaded
 library(LOGIT)
 data(mylgg)
 mylgg
-summary(lg <- glm( cbind(alive, dead) ~ white + hmo + factor(type),
+summary(lg <- glm(cbind(alive, dead) ~ white + hmo + factor(type),
                 family=binomial, data=mylgg))
 toOR(lg)
 P__disp(lg)

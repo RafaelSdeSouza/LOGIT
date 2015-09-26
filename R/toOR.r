@@ -4,10 +4,10 @@
 #' @description Following the glm command, toOR() displays a table of odds ratios and related statistics
 #' including exponentiated model confidence intervals.
 #' @aliases toOR
-#' @usage toOR(x)
+#' @usage toOR(object, ...)
 #'
 #' @format  \describe{
-#' \item{x}{
+#' \item{object, ...}{
 #' The only argument is the name of the fitted glm function model}
 #' value
 #' \describe{

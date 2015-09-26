@@ -10,7 +10,7 @@ output than comes with the default JAGS output
 }
 
 \usage{
-source("jhbayes.r")
+MyBUGSOutput(xx,vars)
 }
 
 \arguments{
@@ -42,9 +42,9 @@ jhbayes.r must be loaded into memory in order to be effectve. Use the source
 function or paste into R editor. Code is 23 lines in length.
 }
 
-\seealso{
-\code{\link{JAGS}}
-}
+%\seealso{
+%\code{\link{JAGS}}
+%}
 
 \examples{
 library(R2jags)

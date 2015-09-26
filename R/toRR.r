@@ -4,10 +4,10 @@
 #' @description Following the glm or glm.nb commands, toRR() displays a table of incidence rate ratios and related statistics
 #' including exponentiated model confidence intervals.
 #' @aliases toRR
-#' @usage toRR(x)
+#' @usage toRR(object, ...)
 #'
 #' @format  \describe{
-#' \item{x}{
+#' \item{object, ...}{
 #' The only argument is the name of the fitted glm or glm.nb function model}
 #'
 #' \describe{

@@ -19,7 +19,9 @@ Imports:
     reshape,
     COUNT,
     e1071,
-    MASS
+    MASS,
+    R2jags,
+    sandwich
 LazyData: TRUE
 NeedsCompilation: no
 Repository: CRAN
