@@ -42,10 +42,10 @@
 #'
 toOR <- function(object) {
      coef <- object$coef
-       se <- sqrt(diag(vcov(object)))
-       zscore <- coef / se
+     se <- sqrt(diag(vcov(object)))
+     zscore <- coef / se
      or <- exp(coef)
-       delta <- or * se
+     delta <- or * se
      pvalue <- 2*pnorm(abs(zscore),lower.tail=FALSE)
      loci <- coef - qnorm(.975) * se
      upci <- coef + qnorm(.975) * se

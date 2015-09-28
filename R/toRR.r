@@ -9,7 +9,6 @@
 #' @format  \describe{
 #' \item{object}{
 #' The only argument is the name of the fitted glm or glm.nb function model}
-#'
 #' \describe{
 #' \item{or}{incidence rate ratio of predictor}
 #' \item{delta}{Model standard error using delta method}
@@ -26,13 +25,13 @@
 #' @note toRR must be loaded into memory in order to be effectve. As a function in LOGIT,
 #' it is immediately available to a user.
 #'@examples
-#'library(MASS)
-#'library(LOGIT)
-#'data(medpar)
-#'medpar$los<-as.numeric(medpar$los)
-#'mypoi <- glm(los ~ white + hmo + factor(age80), family=poisson, data=medpar)
-#'summary(mypoi)
-#'toRR(mypoi)
+#' library(MASS)
+#' library(LOGIT)
+#' data(medpar)
+#' medpar$los<-as.numeric(medpar$los)
+#' mypoi <- glm(los ~ white + hmo + factor(age80), family=poisson, data=medpar)
+#' summary(mypoi)
+#' toRR(mypoi)
 #'
 #' @seealso \code{\link{glm}}, \code{\link{glm.nb}}
 #' @author Joseph M. Hilbe, Arizona State University, and

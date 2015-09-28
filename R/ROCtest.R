@@ -29,7 +29,7 @@
 #' @references Hilbe, Joseph M. (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
 #' Hilbe, Joseph M. (2009), Logistic Regression Models, Chapman & Hall/CRC.
 #'@examples
-#'   library(MASS)
+#'  library(MASS)
 #'  library(LOGIT)
 #'  data(R84)
 #'  R84$cage <- R84$age - mean(R84$age)
