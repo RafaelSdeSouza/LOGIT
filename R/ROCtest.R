@@ -7,7 +7,7 @@
 #' 2: ROC plot with Area Under Curve (AUC) statistic
 #' @aliases ROCtest
 #' @import  pROC caret ggplot2 ggthemes reshape
-#' @usage ROCtest(modelname, # folds, type="Sensitivity" | "ROC")
+#' @usage ROCtest(model= model, fold=10, type=c("ROC","Sensitivity"))
 #'
 #' @format   \describe{
 #' \item{x}{
@@ -49,37 +49,44 @@
 ########### Function
 
 
-ROCtest <- function(model= model, fold=10, type="ROC") {
+ROCtest <- function(model= model, fold=10, type=c("ROC","Sensitivity")) {
+# To pass R CMD check
+Sensitivity <- NULL
+Specificity <- NULL
+variable <- NULL
+value <- NULL
+probcut <- NULL
+
 # Extract information from dataset
-  data<-model$data
-  response=as.character(model$formula[[2]])
-  folds <- createFolds(data[,response], k=fold)
-  AUC<-c()
-  ROC_all<-c()
-  cut<-c()
+  data <- model$data
+  response = as.character(model$formula[[2]])
+  folds <- createFolds(data[,response], k = fold)
+  AUC <- c()
+  ROC_all <- c()
+  cut <- c()
 
 # Run k-fold and ROC analysis
-   for(i in 1:fold){
-    training <-data[-folds[[i]], ]
+   for (i in 1:fold){
+    training <- data[-folds[[i]], ]
     testing <- data[folds[[i]], ]
-    myroc <- glm(model$formula, family = binomial, data= training)
+    myroc <- glm(model$formula, family = binomial, data = training)
 
 
-    ROC.a<- data.frame(True = training[,response],predicted=predict(myroc, newdata=training,type = "response"))
+    ROC.a <- data.frame(True = training[,response],predicted = predict(myroc, newdata = training,type = "response"))
 
-    F1 <-roc(ROC.a$True,ROC.a$predicted)
+    F1 <- roc(ROC.a$True,ROC.a$predicted)
 
-    ROC.b<- data.frame(True=testing[,response],predicted=predict(myroc, newdata=testing,type = "response"))
+    ROC.b <- data.frame(True = testing[,response],predicted = predict(myroc, newdata = testing,type = "response"))
 
-    ROC.b$class<-ROC.b$predicted
-    ROC.b$class[which(ROC.b$class>=coords(F1,x="best")[1])]<-1
-    ROC.b$class[which(ROC.b$class<coords(F1,x="best")[1])]<-0
-    F2 <-roc(ROC.b$True,ROC.b$predicted)
-    ROC_all<-rbind(ROC_all,ROC.b)
+    ROC.b$class <- ROC.b$predicted
+    ROC.b$class[which(ROC.b$class >= coords(F1,x = "best")[1])] <- 1
+    ROC.b$class[which(ROC.b$class < coords(F1,x = "best")[1])] <- 0
+    F2 <- roc(ROC.b$True,ROC.b$predicted)
+    ROC_all <- rbind(ROC_all,ROC.b)
 
 
 
-    AUC<-append(AUC,F2$auc)
+    AUC <- append(AUC,F2$auc)
 #    cut<-append(cut,coords(F1,x="best")[1])
   }
 
@@ -87,18 +94,17 @@ ROCtest <- function(model= model, fold=10, type="ROC") {
 
 
 # Plot information
-GROC<-roc(ROC_all$True,ROC_all$predicted)
+GROC <- roc(ROC_all$True,ROC_all$predicted)
 
-cut<-coords(GROC,x="best",best.method=c("closest.topleft"))[[1]]
+cut <- coords(GROC,x = "best",best.method=c("closest.topleft"))[[1]]
 #xs<-coords(GROC,x="best")[[2]]
 #ys<-coords(GROC,x="best")[[3]]
 
 # Plot ROC curve and Confusion Matrix
 
 
-
-if(type=="ROC") {
-  g1<-data.frame(Sensitivity=GROC$sensitivities,Specificity=1-GROC$specificities)
+if(type == "ROC") {
+  g1 <- data.frame(Sensitivity=GROC$sensitivities,Specificity=1-GROC$specificities)
 
 
  gg<- ggplot(data=g1,aes(x=Specificity,y=Sensitivity))+geom_line(size=1.5,alpha=0.7,color="blue4")+

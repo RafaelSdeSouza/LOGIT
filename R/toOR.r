@@ -4,10 +4,10 @@
 #' @description Following the glm command, toOR() displays a table of odds ratios and related statistics
 #' including exponentiated model confidence intervals.
 #' @aliases toOR
-#' @usage toOR(object, ...)
+#' @usage toOR(object)
 #'
 #' @format  \describe{
-#' \item{object, ...}{
+#' \item{object}{
 #' The only argument is the name of the fitted glm function model}
 #' value
 #' \describe{
@@ -40,7 +40,7 @@
 #' @keywords models
 #' @export
 #'
-toOR <- function(object, ...) {
+toOR <- function(object) {
      coef <- object$coef
        se <- sqrt(diag(vcov(object)))
        zscore <- coef / se

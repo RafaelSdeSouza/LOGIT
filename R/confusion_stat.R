@@ -15,7 +15,7 @@
 #' @title  Display confusion or classification matrix following logistic regression using glm with binomial family.
 #' @description Provides a confusion matrix of classification statistics following logistic regression.
 #' @aliases confusion_stat
-#' @usage confusion_stat(<predicted statistic>, <observed response>)
+#' @usage confusion_stat(pred=pred,obs=obs)
 #'
 #' @format \describe{
 #' \item{x}{
@@ -54,6 +54,5 @@ confusion_stat<-function(pred=pred,obs=obs)
   CM<-table(pred,obs)
   table=ftable(addmargins(CM))
   stat<-confusionMatrix(pred,obs)
-  Sensitivity<-stat
   return(list(matrix=table,statistics=c(stat$overall[1],stat$byClass[1],stat$byClass[2] )))
 }

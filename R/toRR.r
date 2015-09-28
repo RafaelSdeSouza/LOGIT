@@ -4,10 +4,10 @@
 #' @description Following the glm or glm.nb commands, toRR() displays a table of incidence rate ratios and related statistics
 #' including exponentiated model confidence intervals.
 #' @aliases toRR
-#' @usage toRR(object, ...)
+#' @usage toRR(object)
 #'
 #' @format  \describe{
-#' \item{object, ...}{
+#' \item{object}{
 #' The only argument is the name of the fitted glm or glm.nb function model}
 #'
 #' \describe{
@@ -45,7 +45,7 @@
 #' @keywords models
 #' @export
 #'
-toRR <- function(object, ...) {
+toRR <- function(object) {
      coef <- object$coef
        se <- sqrt(diag(vcov(object)))
        zscore <- coef / se

@@ -51,21 +51,23 @@ toOR(myqr)
 
 
 # POISSON REGRESSION
-library(COUNT)
+# library(COUNT)
 data(titanicgrp)
-glmpr <- glm(survive ~ age + sex + factor(class) + offset(log(cases)), family=poisson, data=titanicgrp)
+titanicgrp$class <-  as.factor(titanicgrp$class)
+titanicgrp$logcases <- log(titanicgrp$cases)
+glmpr <- glm(survive ~ age + sex + class + offset(logcases), family= poisson, data=titanicgrp)
 summary(glmpr)
 exp(coef(glmpr))
 
-lcases <- log(titanicgrp$cases)
-nb2o <- nbinomial(survive ~ age + sex + factor(class),
-                                        formula2 =~ age + sex,
-                                        offset = lcases,
-                                        mean.link="log",
-                                        scale.link="log_s",
-                                        data=titanicgrp)
-summary(nb2o)
-exp(coef(nb2o))
+#lcases <- log(titanicgrp$cases)
+#nb2o <- nbinomial(survive ~ age + sex + factor(class),
+#                                        formula2 =~ age + sex,
+#                                        offset = lcases,
+#                                        mean.link="log",
+#                                        scale.link="log_s",
+#                                        data=titanicgrp)
+#summary(nb2o)
+#exp(coef(nb2o))
 
 }
 

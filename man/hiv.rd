@@ -45,10 +45,15 @@ library(LOGIT)
 data(hiv)
 table(hiv); hiv
 noinfec <- hiv$cases -  hiv$infec
-summary(myhiv<- glm(cbind(infec, noinfec) ~  factor(cd4)  + factor(cd8), family=binomial, data=hiv))
-summary(mymodq <- glm( cbind(infec, noinfec) ~  factor(cd4)  + factor(cd8), family=quasibinomial, data=hiv))
-library(sandwich)
-sqrt(diag(vcovHC(myhiv, type="HC0")))
+response <- cbind(hiv$infec, noinfec)
+myhiv<- glm(response ~  factor(cd4)  + factor(cd8), family=binomial, data=hiv)
+summary(myhiv)
+
+mymodq <- glm(response ~  factor(cd4)  + factor(cd8), family=quasibinomial, data=hiv)
+summary(mymodq)
+
+#library(sandwich)
+#sqrt(diag(vcovHC(myhiv, type="HC0")))
 toOR(myhiv)
 }
 \keyword{datasets}

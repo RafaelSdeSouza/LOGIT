@@ -3,8 +3,7 @@
 #' regression using glm with binomial family.
 #' @description Provides a Hosmer-Lemeshow statistic and table following logistic regression.
 #' @aliases HLTest
-#' @usage HLTest(model name, # groups)
-#' See example for remainer of code
+#' @usage HLTest(obj, g)
 #'
 #' @format \describe{
 #' \item{x}{

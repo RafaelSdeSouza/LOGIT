@@ -58,25 +58,26 @@ data(medpar)
 summary(glmpb <- glm( died ~ los + hmo + white + factor(type),
                 family=binomial(link=probit), data=medpar))
 
-library(COUNT)     # or library(LOGIT)
+library(LOGIT)     # or library(COUNT)
 data(medpar)
+medpar$los<-as.numeric(medpar$los)
 glmpb <- glm(los ~ hmo + white + factor(type), family=poisson, data=medpar)
 summary(glmpb)
 exp(coef(glmpb))
 toRR(glmpb)
 
-library(COUNT)    # nbinomial in both COUNT and msme packages
-data(medpar)
-nb2 <- nbinomial(los ~ hmo + white + factor(type), data=medpar)
-summary(nb2)
-exp(coef(nb2))
+#library(COUNT)    # nbinomial in both COUNT and msme packages
+#data(medpar)
+#nb2 <- nbinomial(los ~ hmo + white + factor(type), data=medpar)
+#summary(nb2)
+#exp(coef(nb2))
 
-library(COUNT)    # or library(LOGIT)
-data(medpar)
-glmnb <- glm.nb(los ~ hmo + white + factor(type), data=medpar)
-summary(glmnb)
-exp(coef(glmnb))
-toRR(glmnb)
+#library(LOGIT)    # or library(COUNT)
+#data(medpar)
+#glmnb <- glm.nb(los ~ hmo + white + factor(type), data=medpar)
+#summary(glmnb)
+#exp(coef(glmnb))
+#toRR(glmnb)
 
 }
 \keyword{datasets}

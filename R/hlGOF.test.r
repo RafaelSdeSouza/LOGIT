@@ -16,7 +16,7 @@
 #' regression using glm with binomial family.
 #' @description Provides a Hosmer-Lemeshow statistic and table following logistic regression.
 #' @aliases hlGOF.test
-#' @usage hlGOF.test(observed, predicted statistic, # breaks or groups)
+#' @usage hlGOF.test(observed, predicted, breaks = 15)
 #'
 #' @format \describe{
 #' \item{x}{

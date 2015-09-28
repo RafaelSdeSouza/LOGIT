@@ -10,7 +10,7 @@ output than comes with the default JAGS output
 }
 
 \usage{
-source("jhbayes.r")
+#source("jhbayes.r")
 }
 
 \arguments{
@@ -47,13 +47,13 @@ function or paste into R editor. Code is 23 lines in length.
 %}
 
 \examples{
-library(R2jags)
-library(LOGIT)
-data(medpar)
-%JAGS code with J0 as MCMC algorithm
-%  out <- J0$BUGS$output
-%  myB <- MyBUGSOutput(out, c(uNames("beta", K), "LogL", "AIC", "BIC"))
-%  round(myB, 4)
+#library(R2jags)
+#library(LOGIT)
+#data(medpar)
+#JAGS code with J0 as MCMC algorithm
+#  out <- J0$BUGS$output
+#  myB <- MyBUGSOutput(out, c(uNames("beta", K), "LogL", "AIC", "BIC"))
+#  round(myB, 4)
 }
 
 \keyword{ models }

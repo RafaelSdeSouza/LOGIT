@@ -32,7 +32,8 @@ library(LOGIT)
 data(edrelig)
 head(edrelig)
 edrelig$cage <- edrelig$age - mean(edrelig$age)
-summary(isrelig<- glm(religious ~  male + cage + kids + factor(educlevel), family=binomial, data=edrelig))
+isrelig<- glm(religious ~  male + cage + kids + factor(educlevel), family=binomial, data=edrelig)
+summary(isrelig)
 toOR(isrelig)
 }
 \keyword{datasets}

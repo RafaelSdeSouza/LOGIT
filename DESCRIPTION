@@ -16,11 +16,8 @@ Imports:
     ggplot2,
     ggthemes,
     reshape,
-    COUNT,
     e1071,
-    MASS,
-    R2jags,
-    sandwich
+    MASS
 LazyData: TRUE
 NeedsCompilation: no
-Repository: CRAN
+Repository: CRAN="http://cran.r-project.org"

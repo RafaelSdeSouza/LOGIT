@@ -30,16 +30,16 @@ Hilbe, Joseph M (2015), Practical Guide to Logistic Regression, Chapman & Hall/C
 }
 \examples{
 library(LOGIT)
-library(COUNT)
+#library(COUNT)
 data(azheart); attach(azheart)
 table(los); table(procedure, type); table(los, died)
 summary(los)
 summary(mymod <- glm(died ~ procedure + type + los, family=binomial, data=azheart))
-modelfit(mymod)
+#modelfit(mymod)
 summary(mymodq <- glm(died ~ procedure+ type  + los, family=quasibinomial, data=azheart))
-modelfit(mymodq)
-library(sandwich)
-sqrt(diag(vcovHC(mymod, type="HC0")))
+#modelfit(mymodq)
+#library(sandwich)
+#sqrt(diag(vcovHC(mymod, type="HC0")))
 toOR(mymod)
 }
 \keyword{datasets}
