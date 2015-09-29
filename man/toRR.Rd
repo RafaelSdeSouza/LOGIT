@@ -6,13 +6,13 @@
 \format{\describe{
 \item{object}{
 The only argument is the name of the fitted glm or glm.nb function model}
-\describe{
+
 \item{or}{incidence rate ratio of predictor}
 \item{delta}{Model standard error using delta method}
 \item{zscore}{z-statistic}
 \item{pvalue}{probability-value based on normal distribution}
 \item{exp.loci}{Exponentialed lower model confidence interval}
-\item{exp.upci}{Expontiated upper model confidence interval}}
+\item{exp.upci}{Expontiated upper model confidence interval}
 }}
 \usage{
 toRR(object)
@@ -49,7 +49,7 @@ Joseph M. Hilbe, Arizona State University, and
 Jet Propulsion Laboratory, California Institute of technology
 }
 \references{
-Hilbe, Joseph M. (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
+Hilbe, Joseph M. (2015), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
 
 Hilbe, Joseph M. (2014), Modeling Count Data, Cambridge University Press.
 }

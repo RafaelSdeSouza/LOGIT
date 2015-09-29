@@ -37,7 +37,7 @@ bear on the death of a patient while in the hospital following surgery.
 1991 National Medpar data, National Health Economics & Research Co.
 }
 \references{
-Hilbe, Joseph M (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
+Hilbe, Joseph M (2015), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
 
 Hilbe, Joseph M (2014), Modeling Count Data, Cambridge University Press.
 

@@ -51,7 +51,7 @@ Joseph M. Hilbe, Arizona State University, and
 Jet Propulsion Laboratory, California Institute of technology
 }
 \references{
-Hilbe, Joseph M. (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
+Hilbe, Joseph M. (2015), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
 Hilbe, Joseph M. (2014), Modeling Count Data, Cambridge University Press
 }
 \seealso{

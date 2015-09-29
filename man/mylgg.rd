@@ -26,12 +26,12 @@ Used to assess odds ratios and predict survival folllowing surgery
 Subset of medpar data, grouped format.
 }
 \references{
-Hilbe, Joseph M (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC
-Hilbe, Joseph M (2009), Logistic Regression Models, Chapman & Hall/CRC
+Hilbe, Joseph M (2015), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
+
+Hilbe, Joseph M (2009), Logistic Regression Models, Chapman & Hall/CRC.
 }
 \examples{
 library(MASS)   # if not automatically loaded
-
 # LOGISTIC REGRESSION
 library(LOGIT)
 data(mylgg)

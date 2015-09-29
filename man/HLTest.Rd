@@ -45,7 +45,7 @@ grp10
 Adapted from Loughlin, T.M. in Bilder and Loughlin, 2015
 }
 \references{
-Hilbe, J. M. (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
+Hilbe, J. M. (2015), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
 
 Bilder, C.R. and Loughlin, T.M. (2015), Analysis of Categorical Data with R, Chapman & Hall/CRC.
 

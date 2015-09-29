@@ -31,7 +31,8 @@
 #'iQuantile(mod)
 #' @author Joseph M. Hilbe, Arizona State University.
 #'
-#' @references Hilbe, J. M. (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
+#' @references Hilbe, J. M. (2015), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
+#'
 #' Hilbe, J. M. (2009), Logistic Regression Models, Chapman & Hall/CRC.
 #' @keywords models
 #' @export

@@ -6,7 +6,7 @@
 }
 \description{
 For use with JAGS from within the R environment. Provides a nicer model
-output than comes with the default JAGS output
+output than comes with the default JAGS output.
 }
 
 \usage{
@@ -24,7 +24,7 @@ will then be in memory. From Alain Zuur support files on highstat.com.
 }
 
 \references{
-Hilbe, Joseph M. (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC,
+Hilbe, Joseph M. (2015), Practical Guide to Logistic Regression, Chapman & Hall/CRC,
    page 137-143.
 
 Zuur, A.F., Hilbe, J.M., and Ieno, E.N. (2013), A Beginner's Guide to

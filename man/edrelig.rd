@@ -22,10 +22,10 @@ age, having children, and education level.
 edrelig is saved as a data frame.
 }
 \source{
-Hilbe, Practical Guide to Logistic Regression, Chapman & Hall/CRC
+Hilbe, Practical Guide to Logistic Regression, Chapman & Hall/CRC.
 }
 \references{
-Hilbe, Joseph M (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC
+Hilbe, Joseph M (2015), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
 }
 \examples{
 library(LOGIT)

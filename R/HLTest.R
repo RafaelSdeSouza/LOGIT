@@ -30,7 +30,7 @@
 #' @seealso \code{\link{glm}}
 #' @author Adapted from Loughlin, T.M. in Bilder and Loughlin, 2015
 #'
-#' @references Hilbe, J. M. (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
+#' @references Hilbe, J. M. (2015), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
 #'
 #' Bilder, C.R. and Loughlin, T.M. (2015), Analysis of Categorical Data with R, Chapman & Hall/CRC.
 #'
