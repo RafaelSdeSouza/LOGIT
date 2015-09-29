@@ -28,8 +28,8 @@
 #' @note confusion_stat() must be loaded into memory in order to be effectve. As a function in LOGIT,
 #' it is immediately available to a user.
 #'@examples
-#'  library(MASS)
-#'  library(LOGIT)
+#'   library(MASS)
+#'   library(LOGIT)
 #'   data(R84)
 #'   R84$cage <- R84$age - mean(R84$age)
 #'   R84$cdoc <- R84$docvis - mean(R84$docvis)
@@ -45,6 +45,7 @@
 #' @author Rafael de Souza, ELTE  University,  and Joseph M. Hilbe, Arizona State University
 #'
 #' @references Hilbe, Joseph M. (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
+#'
 #' Hilbe, Joseph M. (2009), Logistic Regression Models, Chapman & Hall/CRC.
 #' @keywords models
 #' @export

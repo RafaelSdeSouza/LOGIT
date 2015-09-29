@@ -15,8 +15,8 @@ determine from the data.
   \describe{
     \item{\code{infec}}{1=Patient diagnosed with HIV; 0=not diagnosed with HIV}
     \item{\code{cases}}{number of patients for each patient profile}
-    \item{\code{cd4}}{3 levels: 0, 2, and 2}
-    \item{\code{cd8}}{3 levels: 0,1, and 2}
+    \item{\code{cd4}}{3 levels: 0, 1, and 2}
+    \item{\code{cd8}}{3 levels: 0, 1, and 2}
     }
 }
 
@@ -24,10 +24,10 @@ determine from the data.
 hiv is saved as a data frame.
 }
 \source{
-Hilbe, Practical Guide to Logistic Regression, Chapman & Hall/CRC
+Hilbe, Practical Guide to Logistic Regression, Chapman & Hall/CRC.
 }
 \references{
-Hilbe, Joseph M (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC
+Hilbe, Joseph M (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
 }
 \examples{
 # Not run
@@ -38,9 +38,6 @@ Hilbe, Joseph M (2016), Practical Guide to Logistic Regression, Chapman & Hall/C
 #summary(myhiv)
 #mymodq <- glm( cbind(infec, noinfec) ~  factor(cd4)  + factor(cd8), family=quasibinomial, data=hiv)
 #summary(mymodq)
-#library(sandwich)
-#sqrt(diag(vcovHC(myhiv, type="HC0")))
-#source("c://rfiles/toOR.r")
 #toOR(myhiv)
 #End(Not run)
 

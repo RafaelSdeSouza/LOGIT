@@ -37,11 +37,15 @@ bear on the death of a patient while in the hospital following surgery.
 1991 National Medpar data, National Health Economics & Research Co.
 }
 \references{
-Hilbe, Joseph M (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC
-Hilbe, Joseph M (2014), Modeling Count Data, Cambridge University Press
-Hilbe, Joseph M (2007, 2011), Negative Binomial Regression, Cambridge University Press
-Hilbe, Joseph M (2009), Logistic Regression Models, Chapman & Hall/CRC
-first used in Hardin, JW and JM Hilbe (2001, 2007), Generalized Linear Models and Extensions, Stata Press
+Hilbe, Joseph M (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
+
+Hilbe, Joseph M (2014), Modeling Count Data, Cambridge University Press.
+
+Hilbe, Joseph M (2007, 2011), Negative Binomial Regression, Cambridge University Press.
+
+Hilbe, Joseph M (2009), Logistic Regression Models, Chapman & Hall/CRC.
+
+first used in Hardin, JW and JM Hilbe (2001, 2007), Generalized Linear Models and Extensions, Stata Press.
 }
 \examples{
 # library(MASS)  if not automatically loaded

@@ -19,7 +19,8 @@
 #' }
 #'
 #'
-#' @details toOR is a post-estimation function, following the use of glm().
+#' @details toRR is a post-estimation function, following the use of glm() with the Poisson
+#' or negative.binomial families, and following glm.nb().
 #' @param object  name of the fitted glm function model
 #' @return list
 #' @note toRR must be loaded into memory in order to be effectve. As a function in LOGIT,
@@ -40,7 +41,8 @@
 #'
 #'
 #' @references Hilbe, Joseph M. (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
-#' Hilbe, Joseph M. (2014), Modeling Count Data, Cambridge University Press
+#'
+#' Hilbe, Joseph M. (2014), Modeling Count Data, Cambridge University Press.
 #' @keywords models
 #' @export
 #'

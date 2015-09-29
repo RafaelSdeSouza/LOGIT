@@ -25,10 +25,13 @@ Used to assess risk ratios
 Found in many other texts
 }
 \references{
-Hilbe, Joseph M (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC
-Hilbe, Joseph M (2014), Modeling Count Data, Cambridge University Press
-Hilbe, Joseph M (2007, 2011), Negative Binomial Regression, Cambridge University Press
-Hilbe, Joseph M (2009), Logistic Regression Models, Chapman & Hall/CRC
+Hilbe, Joseph M (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
+
+Hilbe, Joseph M (2014), Modeling Count Data, Cambridge University Press.
+
+Hilbe, Joseph M (2007, 2011), Negative Binomial Regression, Cambridge University Press.
+
+Hilbe, Joseph M (2009), Logistic Regression Models, Chapman & Hall/CRC.
 }
 \examples{
 library(MASS)   # if not automatically loaded

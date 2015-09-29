@@ -40,10 +40,14 @@ German Health Reform Registry for the year 1984, in Hilbe and Greene (2007)
 }
 \references{
 Hilbe, Joseph M (2009), Logistic Regression Models, Chapman & Hall/CRC.
+
 Hilbe, Joseph M (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
-Hilbe, Joseph M (2011), Negative Binomial Regression, 2nd ed., Cambridge University Press
-Hilbe, Joseph M (2014), Modeling Count Data, Cambridge University Press
-Hardin & Hilbe  (2013), Generalized Linear Models & Extensions, 3rd ed, Stata Press
+
+Hilbe, Joseph M (2011), Negative Binomial Regression, 2nd ed., Cambridge University Press.
+
+Hilbe, Joseph M (2014), Modeling Count Data, Cambridge University Press.
+
+Hardin & Hilbe  (2013), Generalized Linear Models & Extensions, 3rd ed, Stata Press.
 }
 \examples{
 # library(MASS)   if not automatically loaded

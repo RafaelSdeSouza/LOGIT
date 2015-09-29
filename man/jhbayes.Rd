@@ -24,8 +24,9 @@ will then be in memory. From Alain Zuur support files on highstat.com.
 }
 
 \references{
-Hilbe, Joseph M. (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
+Hilbe, Joseph M. (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC,
    page 137-143.
+
 Zuur, A.F., Hilbe, J.M., and Ieno, E.N. (2013), A Beginner's Guide to
    GLM and GLMM with R: a frequentist and Bayesian perspective for ecologists,
    Highlands.

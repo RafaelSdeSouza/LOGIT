@@ -53,6 +53,7 @@ Joseph M. Hilbe, Arizona State University.
 }
 \references{
 Hilbe, Joseph M. (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
+
 Hilbe, Joseph M. (2009), Logistic Regression Models, Chapman & Hall/CRC.
 }
 \seealso{

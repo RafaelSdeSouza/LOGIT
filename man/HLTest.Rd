@@ -34,20 +34,23 @@ use of their function.
 }
 \examples{
 library(MASS)
- library(LOGIT)
- data(medpar)
- mylogit <- glm( died ~  los + white + hmo, family=binomial, data=medpar)
- grp10 <- HLTest(obj=mylogit, g=10)
- cbind(grp10$observed, round(grp10$expect, digits = 1))
- grp10
+library(LOGIT)
+data(medpar)
+mylogit <- glm( died ~  los + white + hmo, family=binomial, data=medpar)
+grp10 <- HLTest(obj=mylogit, g=10)
+cbind(grp10$observed, round(grp10$expect, digits = 1))
+grp10
 }
 \author{
 Adapted from Loughlin, T.M. in Bilder and Loughlin, 2015
 }
 \references{
 Hilbe, J. M. (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
-Bilder, C.R. and Loughlin, T.M. (2015), Analysis of Categorical Data with R, Chapman & Hall/CRC
+
+Bilder, C.R. and Loughlin, T.M. (2015), Analysis of Categorical Data with R, Chapman & Hall/CRC.
+
 Hilbe, J. M. (2009), Logistic Regression Models, Chapman & Hall/CRC.
+
 Hosmer, D.W., Lemeshow, S, and Sturdivant, R.X (2013), Applied Logistic Regression, 3rd ed, Wiley.
 }
 \seealso{
