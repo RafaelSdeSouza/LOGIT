@@ -1,0 +1,10 @@
+include README.md
+include data/azheart.rdata
+include data/badhealth.rdata
+include data/edrelig.rdata
+include data/hiv.rdata
+include data/medpar.rdata
+include data/mylgg.rdata
+include data/R84.rdata
+include data/rwm1984.rdata
+include data/titanicgrp.rdata

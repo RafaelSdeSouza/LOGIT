@@ -13,7 +13,7 @@ log,
     \item{\code{survive}}{number of passengers who survived}
     \item{\code{cases}}{number of passengers with same pattern of covariates}
     \item{\code{age}}{1=adult; 0=child}
-    \item{\code{sex}}{1=Male; 0=female}
+    \item{\code{sex}}{1=male; 0=female}
     \item{\code{class}}{ticket class 1= 1st class; 2= second class; 3= third class}
    }
 }
